@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node test-db-connection.js:*)",
+      "Bash(cat:*)",
+      "Bash(Test-NetConnection -ComputerName aws-1-ap-northeast-1.pooler.supabase.com -Port 6543)",
+      "Bash(node test-connection-string.js:*)",
+      "Bash(npm run check:*)",
+      "Bash(npm run db:migrate:*)",
+      "Bash(npm run dev:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "jolin-sleep-tracker",
+  "version": "1.0.0",
+  "description": "Jolin 睡覺打卡 Line Bot - 記錄你的睡眠時間，看看你夠不夠漂亮",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "db:migrate": "node src/database/migrate.js",
+    "check": "node check-setup.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "line-bot",
+    "sleep-tracker",
+    "jolin"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@line/bot-sdk": "^9.3.0",
+    "express": "^4.21.1",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.5",
+    "moment-timezone": "^0.5.46"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
