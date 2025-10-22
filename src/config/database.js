@@ -40,6 +40,22 @@ const pool = new Pool({
   connectionTimeoutMillis: 10000,
 });
 
+// 測試連線並記錄資訊
+pool.connect((err, client, release) => {
+  if (err) {
+    console.error('資料庫連線失敗:', err);
+  } else {
+    console.log('✅ 資料庫連線成功!');
+    console.log('📊 連線資訊:', {
+      host: config.host,
+      port: config.port,
+      database: config.database,
+      user: config.user
+    });
+    release();
+  }
+});
+
 pool.on('error', (err) => {
   console.error('Unexpected error on idle client', err);
   process.exit(-1);
