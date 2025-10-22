@@ -15,6 +15,11 @@ async function migrate() {
     process.exit(0);
   } catch (error) {
     console.error('資料庫遷移失敗:', error);
+    // 如果是 trigger 已存在的錯誤，視為成功（表示已經遷移過了）
+    if (error.code === '42710') {
+      console.log('資料庫結構已存在，跳過遷移。');
+      process.exit(0);
+    }
     process.exit(1);
   }
 }

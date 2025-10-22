@@ -24,9 +24,10 @@ app.use((err, req, res, next) => {
 });
 
 // 啟動伺服器
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server is running on port ${PORT}`);
   console.log(`📱 Webhook URL: http://localhost:${PORT}/webhook`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`\n請確保：`);
   console.log(`1. 已設定 .env 檔案中的 LINE_CHANNEL_ACCESS_TOKEN 和 LINE_CHANNEL_SECRET`);
   console.log(`2. 已執行 npm run db:migrate 建立資料庫結構`);
